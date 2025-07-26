@@ -17,6 +17,3 @@ datacenter:
     ntp_servers:
       - server 0.dk.pool.ntp.org
       - server 1.dk.pool.ntp.org
-    dns_servers:
-      - 8.8.8.8
-      - 9.9.9.9
