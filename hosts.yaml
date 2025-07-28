@@ -13,7 +13,7 @@ datacenter:
     ansible_connection: network_cli
     ansible_network_os: ios
     ansible_user: admin
-    ansible_ssh_pass: cisco123
+    ansible_ssh_pass: Password1
     ntp_servers:
       - server 0.dk.pool.ntp.org
       - server 1.dk.pool.ntp.org
