@@ -1,0 +1,15 @@
+---
+- name: Configure login banner on Cisco IOS routers
+  hosts: cisco_routers
+  gather_facts: no
+  tasks:
+
+    - name: Set login banner with dynamic hostname
+      cisco.ios.ios_banner:
+        banner: login
+        text: |
+          ***********************************
+          *  Velkommen til hosten {{ router_hostname }}  *
+          *  Din mor er en mand  *
+          ***********************************
+        state: present

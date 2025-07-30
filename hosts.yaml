@@ -1,20 +1,21 @@
----
-datacenter:
+all:
   children:
-    routers:
+    cisco_routers:
       hosts:
-        192.168.8.172:
+        Router-1:
+          ansible_host: 192.168.8.172
+          router_hostname: Router-1
+        Router-2:
+          ansible_host: 192.168.8.173
+          router_hostname: Router-2
+        Router-3:
+          ansible_host: 192.168.8.174
+          router_hostname: Router-3
       vars:
-        testvar: 999
-    switches:
-      hosts:
-        192.168.8.181:
-        192.168.8.182:
-  vars:
-    ansible_connection: network_cli
-    ansible_network_os: ios
-    ansible_user: admin
-    ansible_ssh_pass: Password1
-    ntp_servers:
-      - server 0.dk.pool.ntp.org
-      - server 1.dk.pool.ntp.org
+        ansible_connection: network_cli
+        ansible_network_os: cisco.ios.ios
+        ansible_user: administrator
+        ansible_password: Password1
+        ansible_become: yes
+        ansible_become_method: enable
+        ansible_become_password: Password1
